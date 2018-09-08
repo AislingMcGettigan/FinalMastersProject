@@ -153,7 +153,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
+    <Content Include="Image\HomePageCarousel\bground.jpg" />
+    <Content Include="Image\HomePageCarousel\header.jpg" />
+    <Content Include="Image\HomePageCarousel\lotus.jpg" />
+    <Content Include="Image\HomePageCarousel\money.jpg" />
+    <Content Include="Image\HomePageCarousel\nursery.jpg" />
+    <Content Include="Image\HomePageCarousel\parents.jpg" />
+    <Content Include="Image\HomePageCarousel\relax.jpg" />
+    <Content Include="Image\HomePageCarousel\slide.jpg" />
+    <Content Include="Image\HomePageCarousel\woman.jpg" />
+    <Content Include="Image\HomePageCarousel\woman2.jpg" />
+    <Content Include="Image\HomePageCarousel\writing.jpg" />
+    <Content Include="Image\logo.png" />
+    <Content Include="Providers.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -188,6 +200,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
+    <Content Include="Image\HomePageCarousel\.DS_Store" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -330,12 +343,12 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Providers.aspx.cs">
+      <DependentUpon>Providers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Providers.aspx.designer.cs">
+      <DependentUpon>Providers.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
