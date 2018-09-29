@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProviderDetails.aspx.cs" Inherits="FinalMastersProject.ProviderDetails" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProviderDetails.aspx.cs" Inherits="FinalMastersProject.ProviderDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <p style="font-size: x-large"><strong>Provider Review</strong></p>
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1">
@@ -6,7 +7,7 @@
             <td runat="server" style="">
                 <br />Name:
                 <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' ForeColor="Black" />
-                <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>"/>
+                <a href="ProviderDetails.aspx?ProviderId=<%# Eval("Id")%>"/>
      <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
                 <br />Type:
                 <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
@@ -159,6 +160,20 @@
         </LoggedInTemplate>
      </asp:LoginView>
 
+            <p><span style="font-size: large"><strong>Add Tags to Your Post:</strong></span>
+            <asp:TextBox ID="TbTags" runat="server" Width="586px"></asp:TextBox>
+                &nbsp;
+            <asp:Button ID="btnAddNewTags" runat="server" BackColor="#CC99FF" BorderColor="#CCCCCC" Font-Bold="True" Font-Size="Medium" Height="24px" OnClick="btnAddNewTags_Click" Text="Add New Tags" Width="152px" />
+        </p>
+        <p style="font-size: medium"><em>(Remember to seperate your tags using commas!)</em></p>
+        <p style="font-size: medium">&nbsp;</p>
+        <p style="font-size: medium"><strong><span style="font-size: large">Existing Tags:</span></strong>
+          
+            <asp:CheckBoxList ID="CBLExistingTags" runat="server" DataSourceID="SqlDataSource2" DataTextField="Tag" DataValueField="Id" RepeatColumns="8" RepeatDirection="Horizontal">
+            </asp:CheckBoxList>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT DISTINCT [Id], [tag] FROM [Tag]"></asp:SqlDataSource>
+        </p>
+
      <p>
             <span style="font-size: large"><strong>Title:&nbsp;&nbsp;</strong><em>&nbsp;</em><strong>&nbsp; </strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TbReviewTitle" runat="server" Width="604px"></asp:TextBox>
@@ -179,3 +194,4 @@
         </p>
 
 </asp:Content>
+

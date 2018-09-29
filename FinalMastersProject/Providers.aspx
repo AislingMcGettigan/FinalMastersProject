@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Providers" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Providers.aspx.cs" Inherits="FinalMastersProject.Providers" %>
+﻿<%@ Page Title="Providers" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Providers.aspx.cs" %>
 
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     <style>
@@ -29,7 +29,7 @@
             <AlternatingItemTemplate>
                 <td runat="server" >
                     <h3><asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' /></h3>
-                    <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>">
+                    <a href="ProviderDetails.aspx?ProviderId=<%# Eval("Id")%>">
                         <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="160px" Height="160px" />
                     </a>
                     <br /><b>type:</b>
@@ -52,11 +52,11 @@
                         <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="160px" Height="160px" />
                     </a>
                     <br /><b>type:</b>
-                    <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Bind("type") %>' />
+                    <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Eval("type") %>' />
                     <br /><b>postcode:</b>
-                    <asp:TextBox ID="postcodeTextBox" runat="server" Text='<%# Bind("postcode") %>' />
+                    <asp:TextBox ID="postcodeTextBox" runat="server" Text='<%# Eval("postcode") %>' />
                     <br /><b>priceByDay:</b>
-                    <asp:TextBox ID="priceByDayTextBox" runat="server" Text='<%# Bind("priceByDay") %>' />
+                    <asp:TextBox ID="priceByDayTextBox" runat="server" Text='<%# Eval("priceByDay") %>' />
                     <br />
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <br />
@@ -90,11 +90,11 @@
                         <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="160px" Height="160px" />
                     </a>
                     <br /><b>type:</b>
-                    <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Bind("type") %>' />
+                    <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Eval("type") %>' />
                     <br /><b>postcode:</b>
-                    <asp:TextBox ID="postcodeTextBox" runat="server" Text='<%# Bind("postcode") %>' />
+                    <asp:TextBox ID="postcodeTextBox" runat="server" Text='<%# Eval("postcode") %>' />
                     <br /><b>priceByDay:</b>
-                    <asp:TextBox ID="priceByDayTextBox" runat="server" Text='<%# Bind("priceByDay") %>' />
+                    <asp:TextBox ID="priceByDayTextBox" runat="server" Text='<%# Eval("priceByDay") %>' />
                     <br />
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                     <br />
