@@ -132,6 +132,7 @@
             </SelectParameters>
         </asp:SqlDataSource>
 
+
         <h2 style="font-size: x-large"><strong>Reviews</strong></h2>
     <p>&nbsp;</p>
     <asp:LoginView ID="LoginView1" runat="server">
@@ -159,6 +160,8 @@
             </div>
         </LoggedInTemplate>
      </asp:LoginView>
+
+
 
             <p><span style="font-size: large"><strong>Add Tags to Your Post:</strong></span>
             <asp:TextBox ID="TbTags" runat="server" Width="586px"></asp:TextBox>
@@ -192,6 +195,5 @@
         </p>
         <p>
         </p>
-
 </asp:Content>
 

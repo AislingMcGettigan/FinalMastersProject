@@ -67,7 +67,7 @@
           consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
           laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <br>
+        <br />
         <button class="btn btn-default btn-lg">List your service</button>
       </div>
     </div>
@@ -108,10 +108,10 @@
         best price.</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>The MinderFinder team work extreamly hard to ensure that people can analyse the childcare facilities to ensure the
-        best price.</p>
+      <span class="glyphicon glyphicon-star logo-small"></span>
+      <h4 style="color:#303030;">5 Star Service</h4>
+      <p>The MinderFinder team  are available six days a week to ensure you have everything you need to find
+          the best service.</p>
     </div>
   </div>
 
