@@ -19,13 +19,15 @@
             width: 100%;
         }
     </style>
-    <div>
-    <b>Filter Type:</b>
-            <asp:DropDownList ID="ddlType" runat="server" CssClass="form-control centerDD" Width="30%" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="type" DataValueField="type" AppendDataBoundItems="True">
-                <asp:ListItem Text="Select Full or Half Day Care " Value="" />
-            </asp:DropDownList>
+    <div class="center centerDD">
+        <b>Filter Type:</b>
+        <asp:DropDownList ID="ddlType" runat="server" CssClass="form-control centerDD" Width="30%" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="type" DataValueField="type" AppendDataBoundItems="True">
+            <asp:ListItem Text="Select Full or Half Day Care " Value="" />
+        </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [type] FROM [ProviderType]"></asp:SqlDataSource>
-        </div>
+
+        <asp:TextBox ID="tbPostCode" placeholder="Post Code Search" runat="server" AutoPostBack="True" CssClass="form-control centerDD"></asp:TextBox>
+    </div>
 
 
     <div class="center-div">
@@ -176,7 +178,12 @@
             </SelectedItemTemplate>
         </asp:ListView>
 
-        <asp:SqlDataSource ID="providerQuery" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT prov.[id], proImg.[imagePath], prov.[name], proTy.[type], proAdd.[postcode], prov.[priceByDay] FROM [Provider] prov INNER JOIN [ProviderType] proTy ON proTy.Id = prov.providerTypeId INNER JOIN [ProviderAddress] proAdd ON proAdd.Id = prov.providerAddressId INNER JOIN [ProviderImages] proImg ON proImg.Id = prov.providerImageId"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="providerQuery" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT prov.[id], proImg.[imagePath], prov.[name], proTy.[type], proAdd.[postcode], prov.[priceByDay] FROM [Provider] prov INNER JOIN [ProviderType] proTy ON proTy.Id = prov.providerTypeId INNER JOIN [ProviderAddress] proAdd ON proAdd.Id = prov.providerAddressId INNER JOIN [ProviderImages] proImg ON proImg.Id = prov.providerImageId WHERE proTy.[type] LIKE @providerType AND proAdd.[postcode] LIKE (@postCode + '%')">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="ddlType" DefaultValue="%" Name="providerType" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter  ControlID="tbPostCode" DefaultValue="%" Name="postCode" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 </asp:Content>
     
