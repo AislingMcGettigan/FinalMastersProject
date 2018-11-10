@@ -153,6 +153,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddProvider.aspx" />
     <Content Include="Image\HomePageCarousel\bground.jpg" />
     <Content Include="Image\HomePageCarousel\header.jpg" />
     <Content Include="Image\HomePageCarousel\lotus.jpg" />
@@ -353,6 +354,13 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProvider.aspx.cs">
+      <DependentUpon>AddProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProvider.aspx.designer.cs">
+      <DependentUpon>AddProvider.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="ProviderDetails.aspx.cs">
