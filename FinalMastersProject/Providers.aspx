@@ -49,7 +49,7 @@
             <asp:TextBox ID="tbMaxPrice" placeholder="Enter Max Price" runat="server" AutoPostBack="True" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-sm-3" style="text-align:center">
-            <b>Other Filter</b>
+            <b>Star Rating</b>
             <br />
         </div>
         <div class="col-sm-3"></div>

@@ -38,7 +38,7 @@ namespace FinalMastersProject
             insertImageCommand.Parameters.AddWithValue("@path", "Image/PreschoolImages/" + filename);
             insertImageCommand.ExecuteNonQuery();
 
-            string providerQuery = "Insert into [dbo].[Provider] ([name],[providerTypeId],[description],[providerAddressId],[priceByDay],[providerImageId]) Values (@name,@type,@description,(SELECT TOP 1 ID FROM [dbo].[ProviderAddress] WHERE postcode = @postcode),@price,(SELECT TOP 1 ID FROM [dbo].[ProviderImages] WHERE imagePath = @path))";
+            string providerQuery = "Insert into [dbo].[Provider] ([name],[providerTypeId],[description],[providerAddressId],[priceByDay],[providerImageId],[totalSpaces],[availibleSpaces],[staffCount],[multiChildPrice],[childCareVouchersAccepted],[ofstedValidated]) Values (@name,@type,@description,(SELECT TOP 1 ID FROM [dbo].[ProviderAddress] WHERE postcode = @postcode),@price,(SELECT TOP 1 ID FROM [dbo].[ProviderImages] WHERE imagePath = @path),@totalSpaces,@availibleSpaces,@staffCount,@multiChildPrice,@childCareVouchersAccepted,@ofstedValidated)";
 
             SqlCommand insertProviderCommand = new SqlCommand(providerQuery, conn);
             insertProviderCommand.Parameters.AddWithValue("@name", tbName.Text);
@@ -47,6 +47,12 @@ namespace FinalMastersProject
             insertProviderCommand.Parameters.AddWithValue("@postcode", tbPostcode.Text);
             insertProviderCommand.Parameters.AddWithValue("@price", tbPrice.Text);
             insertProviderCommand.Parameters.AddWithValue("@path", "Image/PreschoolImages/" + filename);
+            insertProviderCommand.Parameters.AddWithValue("@totalSpaces", tbSpaces.Text);
+            insertProviderCommand.Parameters.AddWithValue("@availibleSpaces", tbAvail.Text);
+            insertProviderCommand.Parameters.AddWithValue("@staffCount", tbStaff.Text);
+            insertProviderCommand.Parameters.AddWithValue("@multiChildPrice", tbMulti.Text);
+            insertProviderCommand.Parameters.AddWithValue("@childCareVouchersAccepted", tbVoucher.Text);
+            insertProviderCommand.Parameters.AddWithValue("@ofstedValidated", tbValidate.Text);
             insertProviderCommand.ExecuteNonQuery();
             conn.Close();
 

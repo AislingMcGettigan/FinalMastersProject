@@ -13,7 +13,7 @@ namespace FinalMastersProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+                if (!User.Identity.IsAuthenticated) jsRater.Visible = false;
         }
 
         protected void btnSubmitReviewDetails_Click(object sender, EventArgs e)
@@ -106,6 +106,11 @@ namespace FinalMastersProject
             }
             sqlDr.Close();
             return retVal;
+        }
+
+        protected void SqlDataSource3_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
         }
     }
 }

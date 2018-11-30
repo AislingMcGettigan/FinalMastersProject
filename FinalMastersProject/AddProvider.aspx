@@ -145,6 +145,74 @@
             <div class="col-sm-2"></div>
         </div>
 
+    <br />
+     <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="Label1" runat="server" Text="Total Spaces: "></asp:Label>
+            </div>
+            <div class="col-sm-6">
+                <asp:TextBox ID="tbSpaces" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    <br />
+     <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="Label2" runat="server" Text="Available Spaces: "></asp:Label>
+            </div>
+            <div class="col-sm-6">
+                <asp:TextBox ID="tbAvail" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    <br />
+     <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="Label3" runat="server" Text="No. Of Staff: "></asp:Label>
+            </div>
+            <div class="col-sm-6">
+                <asp:TextBox ID="tbStaff" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    <br />
+     <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="Label4" runat="server" Text="Multi Child Discount Price: "></asp:Label>
+            </div>
+            <div class="col-sm-6">
+                <asp:TextBox ID="tbMulti" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+    <br />
+     <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="Label5" runat="server" Text="Childcare Vouchers Accepted: "></asp:Label>
+            </div>
+            <div class="col-sm-6">
+                <asp:TextBox ID="tbVoucher" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    <br />
+     <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="Label6" runat="server" Text="Ofsted Validated: "></asp:Label>
+            </div>
+            <div class="col-sm-6">
+                <asp:TextBox ID="tbValidate" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
         <hr />
 
         <div class="row">
