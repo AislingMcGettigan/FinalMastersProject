@@ -52,7 +52,6 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/AddProvider.aspx">Add Provider</a></li>
                         <li><a runat="server" href="~/Providers.aspx">Providers</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
@@ -64,6 +63,9 @@
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a runat="server" href="~/AddProvider.aspx">Add Provider</a></li>
+                            </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>

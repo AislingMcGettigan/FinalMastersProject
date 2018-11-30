@@ -8,6 +8,7 @@
             padding: 10px;
             text-align: center;
         }
+
         td {
             background-color: white;
             padding: 5px;
@@ -19,16 +20,42 @@
             width: 100%;
         }
     </style>
-    <div class="center centerDD">
-        <b>Filter Type:</b>
-        <asp:DropDownList ID="ddlType" runat="server" CssClass="form-control centerDD" Width="30%" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="type" DataValueField="type" AppendDataBoundItems="True">
-            <asp:ListItem Text="Select Full or Half Day Care " Value="" />
-        </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [type] FROM [ProviderType]"></asp:SqlDataSource>
 
-        <asp:TextBox ID="tbPostCode" placeholder="Post Code Search" runat="server" AutoPostBack="True" CssClass="form-control centerDD"></asp:TextBox>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3" style="text-align:center">
+            <b>Type</b>
+            <br />
+            <asp:DropDownList ID="ddlType" runat="server" CssClass="form-control centerDD" Width="100%" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="type" DataValueField="type" AppendDataBoundItems="True">
+                <asp:ListItem Text="Select Full or Half Day Care " Value="" />
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [type] FROM [ProviderType]"></asp:SqlDataSource>
+        </div>
+        <div class="col-sm-3" style="text-align:center">
+            <b>Postcode</b>
+            <br />
+            <asp:TextBox ID="tbPostCode" placeholder="Post Code Search" runat="server" AutoPostBack="True" CssClass="form-control"></asp:TextBox>
+        </div>
+        <div class="col-sm-3"></div>
     </div>
 
+    <br />
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3" style="text-align:center">
+            <b>Max Price</b>
+            <br />
+            <asp:TextBox ID="tbMaxPrice" placeholder="Enter Max Price" runat="server" AutoPostBack="True" CssClass="form-control"></asp:TextBox>
+        </div>
+        <div class="col-sm-3" style="text-align:center">
+            <b>Other Filter</b>
+            <br />
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
+    <hr />
 
     <div class="center-div">
         <div class="center">
@@ -178,10 +205,11 @@
             </SelectedItemTemplate>
         </asp:ListView>
 
-        <asp:SqlDataSource ID="providerQuery" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT prov.[id], proImg.[imagePath], prov.[name], proTy.[type], proAdd.[postcode], prov.[priceByDay] FROM [Provider] prov INNER JOIN [ProviderType] proTy ON proTy.Id = prov.providerTypeId INNER JOIN [ProviderAddress] proAdd ON proAdd.Id = prov.providerAddressId INNER JOIN [ProviderImages] proImg ON proImg.Id = prov.providerImageId WHERE proTy.[type] LIKE @providerType AND proAdd.[postcode] LIKE (@postCode + '%')">
+        <asp:SqlDataSource ID="providerQuery" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT prov.[id], proImg.[imagePath], prov.[name], proTy.[type], proAdd.[postcode], prov.[priceByDay] FROM [Provider] prov INNER JOIN [ProviderType] proTy ON proTy.Id = prov.providerTypeId INNER JOIN [ProviderAddress] proAdd ON proAdd.Id = prov.providerAddressId INNER JOIN [ProviderImages] proImg ON proImg.Id = prov.providerImageId WHERE proTy.[type] LIKE @providerType AND proAdd.[postcode] LIKE (@postCode + '%') AND prov.[priceByDay] <= @maxPrice">
             <SelectParameters>
                 <asp:ControlParameter ControlID="ddlType" DefaultValue="%" Name="providerType" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter  ControlID="tbPostCode" DefaultValue="%" Name="postCode" PropertyName="Text" Type="String" />
+                <asp:ControlParameter  ControlID="tbMaxPrice" DefaultValue="10000" Name="maxPrice" PropertyName="Text" Type="Decimal" />
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
