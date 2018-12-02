@@ -13,7 +13,7 @@ namespace FinalMastersProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int rating = Convert.ToInt16(Request.Params["Rating"]);
+            int rating = Convert.ToInt32(Request.Params["Rating"]);
             int beingRated = Convert.ToInt16(Request.Params["BeingRated"]);
             string id = User.Identity.GetUserId();
 
@@ -21,7 +21,7 @@ namespace FinalMastersProject
             string Connstr = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             SqlConnection conn = new SqlConnection(Connstr);
-            SqlCommand delete = new SqlCommand("DELETE FROM Rating WHERE UserFK = @UserFK AND ProductFK = @beingRated", conn);
+            SqlCommand delete = new SqlCommand("DELETE FROM Rating WHERE userfk = @UserFK AND providerfk = @beingRated", conn);
 
             conn.Open();
 
@@ -29,11 +29,11 @@ namespace FinalMastersProject
             delete.Parameters.AddWithValue("@beingRated", beingRated);
             delete.ExecuteNonQuery();
 
-            SqlCommand insertcmnd = new SqlCommand("INSERT INTO Rating(UserFK, rating, ProductFK, AddedDate) VALUES (@UserFK, @rating, @ProductFK, @AddedDate)", conn);
+            SqlCommand insertcmnd = new SqlCommand("INSERT INTO Rating(userfk, rating, providerfk, addedDate) VALUES (@UserFK, @rating, @providerFK, @AddedDate)", conn);
 
             insertcmnd.Parameters.AddWithValue("@UserFK", id);
             insertcmnd.Parameters.AddWithValue("@rating", rating);
-            insertcmnd.Parameters.AddWithValue("@ProductFK", beingRated);
+            insertcmnd.Parameters.AddWithValue("@providerFK", beingRated);
             insertcmnd.Parameters.AddWithValue("@AddedDate", DateTime.Now);
             insertcmnd.ExecuteNonQuery();
 

@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProviderDetails.aspx.cs" Inherits="FinalMastersProject.ProviderDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <link href="Scripts/CSS/star-rating.css" media="all" rel="stylesheet" type="text/css" />
       
      <p style="font-size: x-large"><strong>Provider Review</strong></p>
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1">
@@ -221,7 +222,20 @@
                 <asp:QueryStringParameter Name="ProviderId" QueryStringField="ProviderId" />
             </SelectParameters>
         </asp:SqlDataSource>
-
+    <p><b>Suggestions on what to write about in your review:</b>
+        <ul>
+            <li>Facilities/Outdoor Space</li>
+            <li>Curriculum</li>
+        <li>Resources/Equipment/ICT</li>
+            <li>Care</li>
+            <li>Staff</li>
+            <li>Food/Nutrition</li>
+            <li>Management</li>
+            <li>Cleanliness</li>
+            <li>Value for Money </li>
+            <li>Safeguarding</li>
+        </ul>
+    </p>
 
         <h2 style="font-size: x-large"><strong>Reviews</strong></h2>
     <p>&nbsp;</p>
@@ -244,13 +258,20 @@
                             <div class="col-md-11"><%#Eval("reviewBody")%></div>
                             <div class="col-md-1"> &nbsp;</div>
                         </div> 
-                         
                     <br />
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
         </LoggedInTemplate>
      </asp:LoginView>
+
+      <div ID="jsRater" runat="server">  
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>
+            <asp:PlaceHolder runat="server">
+                <input id="mainRater" type="number" class="rating rating-loading" data-min="0" data-max="5" data-step="1">
+            </asp:PlaceHolder>
 
             <p><span style="font-size: large"><strong>Add Tags to Your Post:</strong></span>
             <asp:TextBox ID="TbTags" runat="server" Width="586px"></asp:TextBox>
@@ -267,6 +288,7 @@
         </p>
 
      <p>
+
             <span style="font-size: large"><strong>Title:&nbsp;&nbsp;</strong><em>&nbsp;</em><strong>&nbsp; </strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TbReviewTitle" runat="server" Width="604px"></asp:TextBox>
         </p>
@@ -284,5 +306,32 @@
         </p>
         <p>
         </p>
+          </div>
+    <script src="Scripts/star-rating.js" type="text/javascript"></script>
+     <script>
+        jQuery(document).ready(function () {
+            $("#mainRater").rating({min:1, max:5, step:1, size:'lg'});
+        });
+
+        $('#mainRater').on('rating:change', function (event, value, caption) {
+            var proId = getUrlVars()["ProviderId"];
+            var rate = $('#mainRater').val();
+            $.get("Rating.aspx",{
+                BeingRated: proId,
+                Rating: rate
+            });
+        });
+
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        };
+    </script>
 </asp:Content>
 

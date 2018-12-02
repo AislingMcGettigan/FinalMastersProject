@@ -62,13 +62,12 @@
         <br>
         <h4> MinderFinder was set up in 2018 to help parents find high quality childcare at the most affordable price.</h4>
         <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Minder Finder has everything you need to one place to high quality childcare at a decent price. With the ability to filter by price, star rating, tags, and location, Minder Finder makes it extreamly easy to find exactly what you need. Use Minder Finder today to find the best deal on your childcare services</p>
         <br />
-        <button class="btn btn-default btn-lg">List your service</button>
+          <a href="AddProvider.aspx">
+                        <asp:Label ID="butLabel" runat="server" Text='List Your Service' />
+</a>
+        
       </div>
     </div>
   </div>

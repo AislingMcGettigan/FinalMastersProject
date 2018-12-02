@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Providers" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Providers.aspx.cs" %>
 
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
+    <link href="Scripts/CSS/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <style>
         .center {
             margin: auto;
@@ -22,7 +23,6 @@
     </style>
 
     <div class="row">
-        <div class="col-sm-3"></div>
         <div class="col-sm-3" style="text-align:center">
             <b>Type</b>
             <br />
@@ -36,13 +36,7 @@
             <br />
             <asp:TextBox ID="tbPostCode" placeholder="Post Code Search" runat="server" AutoPostBack="True" CssClass="form-control"></asp:TextBox>
         </div>
-        <div class="col-sm-3"></div>
-    </div>
 
-    <br />
-
-    <div class="row">
-        <div class="col-sm-3"></div>
         <div class="col-sm-3" style="text-align:center">
             <b>Max Price</b>
             <br />
@@ -51,8 +45,27 @@
         <div class="col-sm-3" style="text-align:center">
             <b>Star Rating</b>
             <br />
+            <asp:DropDownList ID="ddlMinRating" runat="server" CssClass="form-control centerDD" Width="100%" AutoPostBack="True">
+                <asp:ListItem Text="Select a Star Rating " Value="" />
+                <asp:ListItem Text="1 Star or Greater " Value="1" />
+                <asp:ListItem Text="2 Star or Greater " Value="2" />
+                <asp:ListItem Text="3 Star or Greater " Value="3" />
+                <asp:ListItem Text="4 Star or Greater " Value="4" />
+            </asp:DropDownList>
         </div>
-        <div class="col-sm-3"></div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-sm-3" style="text-align:center">
+            <b>Filter By Tag</b>
+            <br />
+            <asp:DropDownList ID="ddlTag" runat="server" CssClass="form-control centerDD" Width="100%" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="tag" DataValueField="Id" AppendDataBoundItems="True">
+                <asp:ListItem Text="Select A Tag " Value="" />
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Id], [tag] FROM [Tag]"></asp:SqlDataSource>
+        </div>
     </div>
 
     <hr />
@@ -61,8 +74,6 @@
         <div class="center">
           <p>
                 <span style="font-size: x-large;"><strong><em>Providers </em></strong></span>
-          </p>
-        </div>
         <asp:ListView ID="ListView1" runat="server" DataSourceID="providerQuery" GroupItemCount="5">
             <AlternatingItemTemplate>
                 <td runat="server" >
@@ -70,12 +81,14 @@
                     <a href="ProviderDetails.aspx?ProviderId=<%# Eval("Id")%>">
                         <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="160px" Height="160px" />
                     </a>
-                    <br /><b>type:</b>
+                    <br /><b>Type:</b>
                     <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
-                    <br /><b>postcode:</b>
+                    <br /><b>Postcode:</b>
                     <asp:Label ID="postcodeLabel" runat="server" Text='<%# Eval("postcode") %>' />
-                    <br /><b>priceByDay:</b>
+                    <br /><b>Price by Day:</b>
                     <asp:Label ID="priceByDayLabel" runat="server" Text='<%# Eval("priceByDay") %>' />
+                    <br /><b>Rating:</b>
+                    <input id="inputRating" name="inputRating" value="<%# Eval("averageRating") %>" class="rating-loading ratingStar">
                     <br />
                     <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>">
                         <asp:Label ID="Label1" runat="server" Text='View Provider' />
@@ -89,12 +102,14 @@
                     <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>">
                         <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="160px" Height="160px" />
                     </a>
-                    <br /><b>type:</b>
+                    <br /><b>Type:</b>
                     <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Eval("type") %>' />
-                    <br /><b>postcode:</b>
+                    <br /><b>Postcode:</b>
                     <asp:TextBox ID="postcodeTextBox" runat="server" Text='<%# Eval("postcode") %>' />
-                    <br /><b>priceByDay:</b>
+                    <br /><b>Price by Day:</b>
                     <asp:TextBox ID="priceByDayTextBox" runat="server" Text='<%# Eval("priceByDay") %>' />
+                    <br /><b>Rating:</b>
+                    <input id="inputRating" name="inputRating" value="<%# Eval("averageRating") %>" class="rating-loading ratingStar">
                     <br />
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <br />
@@ -127,12 +142,14 @@
                     <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>">
                         <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="160px" Height="160px" />
                     </a>
-                    <br /><b>type:</b>
+                    <br /><b>Type:</b>
                     <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Eval("type") %>' />
-                    <br /><b>postcode:</b>
+                    <br /><b>Postcode:</b>
                     <asp:TextBox ID="postcodeTextBox" runat="server" Text='<%# Eval("postcode") %>' />
-                    <br /><b>priceByDay:</b>
+                    <br /><b>Price by Day:</b>
                     <asp:TextBox ID="priceByDayTextBox" runat="server" Text='<%# Eval("priceByDay") %>' />
+                    <br /><b>Rating:</b>
+                    <input id="inputRating" name="inputRating" value="<%# Eval("averageRating") %>" class="rating-loading ratingStar">
                     <br />
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                     <br />
@@ -150,12 +167,14 @@
                     <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>">
                         <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="160px" Height="160px" />
                     </a>
-                    <br /><b>type:</b>
+                    <br /><b>Type:</b>
                     <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
-                    <br /><b>postcode:</b>
+                    <br /><b>Postcode:</b>
                     <asp:Label ID="postcodeLabel" runat="server" Text='<%# Eval("postcode") %>' />
-                    <br /><b>priceByDay:</b>
+                    <br /><b>Price by Day:</b>
                     <asp:Label ID="priceByDayLabel" runat="server" Text='<%# Eval("priceByDay") %>' />
+                    <br /><b>Rating:</b>
+                    <input id="inputRating" name="inputRating" value="<%# Eval("averageRating") %>" class="rating-loading ratingStar">
                     <br />
                     <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>">
                         <asp:Label ID="Label1" runat="server" Text='View Provider' />
@@ -190,12 +209,14 @@
                     <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>">
                         <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="160px" Height="160px" />
                     </a>
-                    <br /><b>type:</b>
+                    <br /><b>Type:</b>
                     <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
-                    <br /><b>postcode:</b>
+                    <br /><b>Postcode:</b>
                     <asp:Label ID="postcodeLabel" runat="server" Text='<%# Eval("postcode") %>' />
-                    <br /><b>priceByDay:</b>
+                    <br /><b>Price by Day:</b>
                     <asp:Label ID="priceByDayLabel" runat="server" Text='<%# Eval("priceByDay") %>' />
+                    <br /><b>Rating:</b>
+                    <input id="inputRating" name="inputRating" value="<%# Eval("averageRating") %>" class="rating-loading ratingStar">
                     <br />
                     <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>">
                         <asp:Label ID="Label1" runat="server" Text='View Provider' />
@@ -205,14 +226,25 @@
             </SelectedItemTemplate>
         </asp:ListView>
 
-        <asp:SqlDataSource ID="providerQuery" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT prov.[id], proImg.[imagePath], prov.[name], proTy.[type], proAdd.[postcode], prov.[priceByDay] FROM [Provider] prov INNER JOIN [ProviderType] proTy ON proTy.Id = prov.providerTypeId INNER JOIN [ProviderAddress] proAdd ON proAdd.Id = prov.providerAddressId INNER JOIN [ProviderImages] proImg ON proImg.Id = prov.providerImageId WHERE proTy.[type] LIKE @providerType AND proAdd.[postcode] LIKE (@postCode + '%') AND prov.[priceByDay] <= @maxPrice">
+          </p>
+        </div>
+
+        <asp:SqlDataSource ID="providerQuery" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT prov.[id], proImg.[imagePath], prov.[name], proTy.[type], proAdd.[postcode], prov.[priceByDay], (SELECT SUM([rating]) / COUNT([id]) as average FROM [Rating] WHERE [providerfk] = prov.[id]) averageRating FROM [Provider] prov INNER JOIN [ProviderType] proTy ON proTy.Id = prov.providerTypeId INNER JOIN [ProviderAddress] proAdd ON proAdd.Id = prov.providerAddressId INNER JOIN [ProviderImages] proImg ON proImg.Id = prov.providerImageId WHERE proTy.[type] LIKE @providerType AND proAdd.[postcode] LIKE (@postCode + '%') AND prov.[priceByDay] &lt;= @maxPrice AND (@tagID IN (SELECT tagID FROM [TagJunction]  WHERE providerId = prov.[id]) OR @tagID = 0) AND  ((SELECT SUM([rating]) / COUNT([id]) as average FROM [Rating] WHERE [providerfk] = prov.[id]) &gt;= @minRating OR @minRating = 0)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="ddlType" DefaultValue="%" Name="providerType" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter  ControlID="tbPostCode" DefaultValue="%" Name="postCode" PropertyName="Text" Type="String" />
                 <asp:ControlParameter  ControlID="tbMaxPrice" DefaultValue="10000" Name="maxPrice" PropertyName="Text" Type="Decimal" />
+                <asp:ControlParameter  ControlID="ddlTag" DefaultValue="0" Name="tagID" PropertyName="SelectedValue" Type="Int32" />
+                <asp:ControlParameter  ControlID="ddlMinRating" DefaultValue="0" Name="minRating" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
+    <script src="Scripts/star-rating.js" type="text/javascript"></script>
+     <script>
+        jQuery(document).ready(function () {
+            $('.ratingStar').rating({displayOnly: true, step: 0.5});
+        });
+    </script>
 </asp:Content>
     
 

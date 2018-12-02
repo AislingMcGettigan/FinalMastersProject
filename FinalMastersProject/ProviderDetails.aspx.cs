@@ -13,7 +13,7 @@ namespace FinalMastersProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                if (!User.Identity.IsAuthenticated) jsRater.Visible = false;
+            if (!User.Identity.IsAuthenticated) jsRater.Visible = false;
         }
 
         protected void btnSubmitReviewDetails_Click(object sender, EventArgs e)

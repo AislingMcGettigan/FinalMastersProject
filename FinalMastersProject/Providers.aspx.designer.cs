@@ -48,6 +48,33 @@ public partial class  {
     protected global::System.Web.UI.WebControls.TextBox tbMaxPrice;
     
     /// <summary>
+    /// ddlMinRating control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList ddlMinRating;
+    
+    /// <summary>
+    /// ddlTag control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList ddlTag;
+    
+    /// <summary>
+    /// SqlDataSource3 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+    
+    /// <summary>
     /// ListView1 control.
     /// </summary>
     /// <remarks>
