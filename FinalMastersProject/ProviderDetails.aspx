@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProviderDetails.aspx.cs" Inherits="FinalMastersProject.ProviderDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="Scripts/CSS/star-rating.css" media="all" rel="stylesheet" type="text/css" />
-      
-     <p style="font-size: x-large"><strong>Provider Review</strong></p>
+      <style>
+          ul.suggestions {list-style-type: square;}
+      </style>
+     <div style="font-size: x-large"><strong>Provider Review</strong></div>
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1">
         <AlternatingItemTemplate>
             <td runat="server" style="">
@@ -222,11 +224,14 @@
                 <asp:QueryStringParameter Name="ProviderId" QueryStringField="ProviderId" />
             </SelectParameters>
         </asp:SqlDataSource>
-    <p><b>Suggestions on what to write about in your review:</b>
-        <ul>
+
+
+<div>
+    <b>Suggestions on what to write about in your review:</b>
+        <ul class="suggestions">
             <li>Facilities/Outdoor Space</li>
             <li>Curriculum</li>
-        <li>Resources/Equipment/ICT</li>
+            <li>Resources/Equipment/ICT</li>
             <li>Care</li>
             <li>Staff</li>
             <li>Food/Nutrition</li>
@@ -235,10 +240,9 @@
             <li>Value for Money </li>
             <li>Safeguarding</li>
         </ul>
-    </p>
+    </div>
 
         <h2 style="font-size: x-large"><strong>Reviews</strong></h2>
-    <p>&nbsp;</p>
     <asp:LoginView ID="LoginView1" runat="server">
         <AnonymousTemplate>You Must Log In To See Reviews</AnonymousTemplate>
         <LoggedInTemplate>
@@ -248,12 +252,10 @@
                         <div class="row">
                             <div class="col-md-12"><b>User <b> Name: </b> </b> <%#Eval("UserName")%></div>
                         </div>
-
                          <div class="row">
                             <div class="col-md-10"><b>Review Title:</b> <%#Eval("reviewTitle")%></div>
                             <div class="col-md-2"><%#Eval("AddedDate")%></div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-11"><%#Eval("reviewBody")%></div>
                             <div class="col-md-1"> &nbsp;</div>
@@ -266,29 +268,25 @@
      </asp:LoginView>
 
       <div ID="jsRater" runat="server">  
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>
             <asp:PlaceHolder runat="server">
                 <input id="mainRater" type="number" class="rating rating-loading" data-min="0" data-max="5" data-step="1">
             </asp:PlaceHolder>
 
-            <p><span style="font-size: large"><strong>Add Tags to Your Post:</strong></span>
+               <h2 style="font-size: x-large"><strong>Add a new tag:</strong></h2>
             <asp:TextBox ID="TbTags" runat="server" Width="586px"></asp:TextBox>
                 &nbsp;
             <asp:Button ID="btnAddNewTags" runat="server" BackColor="#CC99FF" BorderColor="#CCCCCC" Font-Bold="True" Font-Size="Medium" Height="24px" OnClick="btnAddNewTags_Click" Text="Add New Tags" Width="152px" />
-        </p>
+     
         <p style="font-size: medium"><em>(Remember to seperate your tags using commas!)</em></p>
         <p style="font-size: medium">&nbsp;</p>
-        <p style="font-size: medium"><strong><span style="font-size: large">Existing Tags:</span></strong>
+        <h2 style="font-size: x-large"><strong>Choose an existing tag</strong></h2>
           
             <asp:CheckBoxList ID="CBLExistingTags" runat="server" DataSourceID="SqlDataSource2" DataTextField="Tag" DataValueField="Id" RepeatColumns="8" RepeatDirection="Horizontal">
             </asp:CheckBoxList>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT DISTINCT [Id], [tag] FROM [Tag]"></asp:SqlDataSource>
-        </p>
 
      <p>
-
+            <h2 style="font-size: x-large"><strong>Leave a Review:</strong></h2>
             <span style="font-size: large"><strong>Title:&nbsp;&nbsp;</strong><em>&nbsp;</em><strong>&nbsp; </strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TbReviewTitle" runat="server" Width="604px"></asp:TextBox>
         </p>

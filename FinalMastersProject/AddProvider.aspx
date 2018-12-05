@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddProvider.aspx.cs" Inherits="FinalMastersProject.AddProvider" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <br />
-
+    <h2 style="font-size: x-large"><strong>Add Your Service</strong></h2>
+    <h6><strong>A MinderFinder staff member will review your request and approve your service within 24hours</strong></h6>
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-2" style="text-align:right">
@@ -20,7 +20,7 @@
             </div>
             <div class="col-sm-1"></div>
         </div>
-
+    
         <br />
 
         <div class="row">
@@ -40,16 +40,16 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-2" style="text-align:right">
-                <asp:Label ID="lblAddress2" CssClass="col-sm-12" runat="server" Text="Address Line 2: "></asp:Label>
-            </div>
-            <div class="col-sm-3">
-                <asp:TextBox ID="tbAddress2" CssClass="col-sm-12" runat="server"></asp:TextBox>
-            </div>
-            <div class="col-sm-2" style="text-align:right">
                 <asp:Label ID="lblAddress1" CssClass="col-sm-12" runat="server" Text="Address Line 1: "></asp:Label>
             </div>
             <div class="col-sm-3">
                 <asp:TextBox ID="tbAddress1" CssClass="col-sm-12" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="lblAddress2" CssClass="col-sm-12" runat="server" Text="Address Line 2: "></asp:Label>
+            </div>
+            <div class="col-sm-3">
+                <asp:TextBox ID="tbAddress2" CssClass="col-sm-12" runat="server"></asp:TextBox>
             </div>
             <div class="col-sm-1"></div>
         </div>
@@ -103,7 +103,7 @@
                 <asp:TextBox ID="tbPrice" runat="server"></asp:TextBox>
             </div>
             <div class="col-sm-2" style="text-align:right">
-                <asp:Label ID="lblUploadImage" runat="server" Text="Upload Provider Image: "></asp:Label>
+                <asp:Label ID="lblUploadImage" runat="server" Text="Upload Image: "></asp:Label>
             </div>
             <div class="col-sm-3">
                 <asp:FileUpload ID="fuProviderImage" runat="server" />
@@ -211,7 +211,7 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8" style="text-align:center">
-                <asp:Button ID="btnSubmit" runat="server" Text="Add Provider" OnClick="btnSubmit_Click" />       
+                <asp:Button ID="btnSubmit" runat="server" class="btn btn-success" Text="Add Provider" OnClick="btnSubmit_Click" />       
             </div>
             <div class="col-sm-2"></div>
         </div>

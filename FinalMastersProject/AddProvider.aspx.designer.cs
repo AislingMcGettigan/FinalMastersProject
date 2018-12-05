@@ -76,24 +76,6 @@ namespace FinalMastersProject {
         protected global::System.Web.UI.WebControls.TextBox tbDescription;
         
         /// <summary>
-        /// lblAddress2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAddress2;
-        
-        /// <summary>
-        /// tbAddress2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbAddress2;
-        
-        /// <summary>
         /// lblAddress1 control.
         /// </summary>
         /// <remarks>
@@ -110,6 +92,24 @@ namespace FinalMastersProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbAddress1;
+        
+        /// <summary>
+        /// lblAddress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddress2;
+        
+        /// <summary>
+        /// tbAddress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbAddress2;
         
         /// <summary>
         /// lblTown control.

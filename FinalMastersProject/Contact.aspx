@@ -26,7 +26,7 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-12 form-group">
-                        <button class="btn btn-default pull-right" type="submit">Send</button>
+                        <button class="btn btn-success pull-right"  type="submit">Send</button>
                     </div>
                 </div>
             </div>

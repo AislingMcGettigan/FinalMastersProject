@@ -56,10 +56,6 @@
             </section>
         </div>
 
-        <div class="col-md-4">
-            <section id="socialLoginForm">
-                <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-            </section>
-        </div>
+       <img src="Image/PreschoolImages/login.png" alt="login" style="width:500px;height:600px;">
     </div>
 </asp:Content>

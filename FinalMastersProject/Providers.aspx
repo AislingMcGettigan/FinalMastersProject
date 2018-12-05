@@ -67,10 +67,8 @@
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Id], [tag] FROM [Tag]"></asp:SqlDataSource>
         </div>
     </div>
-
     <hr />
-
-    <div class="center-div">
+  <div class="center-div">
         <div class="center">
           <p>
                 <span style="font-size: x-large;"><strong><em>Providers </em></strong></span>
