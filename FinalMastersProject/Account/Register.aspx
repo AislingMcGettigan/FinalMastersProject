@@ -24,7 +24,6 @@
                     </div>
                 </div>
         </div>
-
     <div class="form-horizontal">
         <h4>Create a new account</h4>
         <hr />
@@ -55,11 +54,11 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
             </div>
         </div>
+        <img src="../Image/Reg/Join.jpg" alt="reg" style="width:200px;height:200px;float:right;" />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
-        </div>
-           <img src="Image/Reg/Join.jpg" alt="join" style="width:500px;height:600px;">
-    </div>
+        </div>    
+            </div>
 </asp:Content>
