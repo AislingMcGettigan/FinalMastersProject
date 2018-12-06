@@ -56,6 +56,6 @@
             </section>
         </div>
 
-       <img src="Image/PreschoolImages/login.png" alt="login" style="width:500px;height:600px;">
+       <img src="Image/Reg/login.png" alt="login" style="width:500px;height:600px;">
     </div>
 </asp:Content>

@@ -11,9 +11,11 @@
                 <br /><b> Name: </b>
                 <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' ForeColor="Black" />
                 <a href="ProviderDetails.aspx?ProviderId=<%# Eval("Id")%>"/>
-     <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
+                <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
                 <br /><b> Type: </b>
                 <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
+                <br /><b> Opening Times: </b>
+                <asp:Label ID="lblOpeningTime" runat="server" Text='<%# Eval("openingTime") %>' /> - <asp:Label ID="lblClosingTime" runat="server" Text='<%# Eval("closingTime") %>' />
                  <br /><b>Description:</b>
                 <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
                 <br />
@@ -39,6 +41,14 @@
                 <asp:Label ID="ServiceIdLabel" runat="server" Text='<%# Eval("ServiceId") %>' />
                 <br /> <b>Ofsted Validated:</b>
                 <asp:Label ID="ofstedValidatedLabel" runat="server" Text='<%# Eval("ofstedValidated") %>' />
+                <br /> <b>Open Bank Holidays:</b>
+                <asp:Label ID="Label1" runat="server" Text='<%# Eval("openBankHolidays") %>' />
+                <br /> <b>Early Dropoffs:</b>
+                <asp:Label ID="Label2" runat="server" Text='<%# Eval("earlyDropOff") %>' />
+                <br /> <b>Late Pickup:</b>
+                <asp:Label ID="Label3" runat="server" Text='<%# Eval("latePickUp") %>' />
+                <br /> <b>Open Weekends:</b>
+                <asp:Label ID="Label4" runat="server" Text='<%# Eval("openWeekends") %>' />
                 <br /></td>
         </AlternatingItemTemplate>
         <EditItemTemplate>
@@ -46,9 +56,11 @@
                 <br /><b> Name: </b>
                 <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' ForeColor="Black" />
                 <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>"/>
-     <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right"  /></a>
+                <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right"  /></a>
                 <br /><b> Type: </b>
                 <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
+                <br /><b> Opening Times: </b>
+                <asp:Label ID="lblOpeningTime" runat="server" Text='<%# Eval("openingTime") %>' /> - <asp:Label ID="lblClosingTime" runat="server" Text='<%# Eval("closingTime") %>' />
                 <br /> <b>Description:</b>
                 <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
                 <br />
@@ -74,6 +86,14 @@
                 <asp:Label ID="ServiceIdLabel" runat="server" Text='<%# Eval("ServiceId") %>' />
                 <br /> <b>Ofsted Validated:</b>
                 <asp:Label ID="ofstedValidatedLabel" runat="server" Text='<%# Eval("ofstedValidated") %>' />
+                <br /> <b>Open Bank Holidays:</b>
+                <asp:Label ID="Label1" runat="server" Text='<%# Eval("openBankHolidays") %>' />
+                <br /> <b>Early Dropoffs:</b>
+                <asp:Label ID="Label2" runat="server" Text='<%# Eval("earlyDropOff") %>' />
+                <br /> <b>Late Pickup:</b>
+                <asp:Label ID="Label3" runat="server" Text='<%# Eval("latePickUp") %>' />
+                <br /> <b>Open Weekends:</b>
+                <asp:Label ID="Label4" runat="server" Text='<%# Eval("openWeekends") %>' />
                 <br /></td>>
         </EditItemTemplate>
         <EmptyDataTemplate>
@@ -96,9 +116,11 @@
                 <br /><b> Name: </b>
                 <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' ForeColor="Black"/>
                 <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>"/>
-     <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
+                <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
                 <br /><b> Type: </b>
                 <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
+                <br /><b> Opening Times: </b>
+                <asp:Label ID="lblOpeningTime" runat="server" Text='<%# Eval("openingTime") %>' /> - <asp:Label ID="lblClosingTime" runat="server" Text='<%# Eval("closingTime") %>' />
                 <br /> <b>Description:</b>
                 <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
                 <br />
@@ -124,6 +146,14 @@
                 <asp:Label ID="ServiceIdLabel" runat="server" Text='<%# Eval("ServiceId") %>' />
                 <br /> <b>Ofsted Validated:</b>
                 <asp:Label ID="ofstedValidatedLabel" runat="server" Text='<%# Eval("ofstedValidated") %>' />
+                <br /> <b>Open Bank Holidays:</b>
+                <asp:Label ID="Label1" runat="server" Text='<%# Eval("openBankHolidays") %>' />
+                <br /> <b>Early Dropoffs:</b>
+                <asp:Label ID="Label2" runat="server" Text='<%# Eval("earlyDropOff") %>' />
+                <br /> <b>Late Pickup:</b>
+                <asp:Label ID="Label3" runat="server" Text='<%# Eval("latePickUp") %>' />
+                <br /> <b>Open Weekends:</b>
+                <asp:Label ID="Label4" runat="server" Text='<%# Eval("openWeekends") %>' />
                 <br /></td>
         </InsertItemTemplate>
         <ItemTemplate>
@@ -131,9 +161,11 @@
                 <br /><b> Name: </b>
                 <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' ForeColor="Black"/>
                 <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>"/>
-     <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
+                <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
                 <br /><b> Type: </b>
                 <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
+                <br /><b> Opening Times: </b>
+                <asp:Label ID="lblOpeningTime" runat="server" Text='<%# Eval("openingTime") %>' /> - <asp:Label ID="lblClosingTime" runat="server" Text='<%# Eval("closingTime") %>' />
                 <br /> <b>Description:</b>
                 <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
                 <br />
@@ -159,6 +191,14 @@
                 <asp:Label ID="ServiceIdLabel" runat="server" Text='<%# Eval("ServiceId") %>' />
                 <br /> <b>Ofsted Validated:</b>
                 <asp:Label ID="ofstedValidatedLabel" runat="server" Text='<%# Eval("ofstedValidated") %>' />
+                <br /> <b>Open Bank Holidays:</b>
+                <asp:Label ID="Label1" runat="server" Text='<%# Eval("openBankHolidays") %>' />
+                <br /> <b>Early Dropoffs:</b>
+                <asp:Label ID="Label2" runat="server" Text='<%# Eval("earlyDropOff") %>' />
+                <br /> <b>Late Pickup:</b>
+                <asp:Label ID="Label3" runat="server" Text='<%# Eval("latePickUp") %>' />
+                <br /> <b>Open Weekends:</b>
+                <asp:Label ID="Label4" runat="server" Text='<%# Eval("openWeekends") %>' />
                 <br /></td>
         </ItemTemplate>
         <LayoutTemplate>
@@ -181,9 +221,11 @@
                 <br /><b> Name: </b>
                 <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' ForeColor="Black"/>
                 <a href="ProviderDetails.aspx?ProviderId=<%#Eval("Id")%>"/>
-     <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
+                <asp:Image id="Image2" runat="server" ImageUrl='<%# Eval("ImagePath")%>' Width="250px" Height="250px" ImageAlign="Right" /></a>
                 <br /><b> Type: </b>
                 <asp:Label ID="typeLabel" runat="server" Text='<%# Eval("type") %>' />
+                <br /><b> Opening Times: </b>
+                <asp:Label ID="lblOpeningTime" runat="server" Text='<%# Eval("openingTime") %>' /> - <asp:Label ID="lblClosingTime" runat="server" Text='<%# Eval("closingTime") %>' />
                 <br /> <b>Description:</b>
                 <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
                 <br />
@@ -209,10 +251,18 @@
                 <asp:Label ID="ServiceIdLabel" runat="server" Text='<%# Eval("ServiceId") %>' />
                 <br /> <b>Ofsted Validated:</b>
                 <asp:Label ID="ofstedValidatedLabel" runat="server" Text='<%# Eval("ofstedValidated") %>' />
+                <br /> <b>Open Bank Holidays:</b>
+                <asp:Label ID="Label1" runat="server" Text='<%# Eval("openBankHolidays") %>' />
+                <br /> <b>Early Dropoffs:</b>
+                <asp:Label ID="Label2" runat="server" Text='<%# Eval("earlyDropOff") %>' />
+                <br /> <b>Late Pickup:</b>
+                <asp:Label ID="Label3" runat="server" Text='<%# Eval("latePickUp") %>' />
+                <br /> <b>Open Weekends:</b>
+                <asp:Label ID="Label4" runat="server" Text='<%# Eval("openWeekends") %>' />
                 <br /></td>
         </SelectedItemTemplate>
     </asp:ListView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT prov.Id, prov.description, proImg.imagePath, prov.name, proTy.type, proAdd.postcode, prov.priceByDay, prov.totalSpaces, prov.availibleSpaces, prov.staffCount, prov.requiredCertificatesChecked, prov.multiChildPrice, prov.childCareVouchersAccepted, prov.certificationReviewDate, prov.serviceId, prov.ofstedValidated FROM Provider AS prov INNER JOIN ProviderType AS proTy ON proTy.Id = prov.providerTypeId INNER JOIN ProviderAddress AS proAdd ON proAdd.Id = prov.providerAddressId INNER JOIN ProviderImages AS proImg ON proImg.Id = prov.providerImageId WHERE (prov.Id = @ProviderId)">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT prov.Id, prov.description, proImg.imagePath, prov.name, proTy.type, proAdd.postcode, prov.priceByDay, prov.totalSpaces, prov.availibleSpaces, prov.staffCount, prov.requiredCertificatesChecked, prov.multiChildPrice, prov.childCareVouchersAccepted, prov.certificationReviewDate, prov.serviceId, prov.ofstedValidated, CASE WHEN serv.earlyDropOff = 1 THEN 'Yes' WHEN serv.earlyDropOff = 2 THEN 'No' END as 'earlyDropOff', CASE WHEN serv.openBankHolidays = 1 THEN 'Yes' WHEN serv.openBankHolidays = 2 THEN 'No' END as 'openBankHolidays', CASE WHEN serv.latePickUp = 1 THEN 'Yes' WHEN serv.latePickUp = 2 THEN 'No' END as 'latePickUp', CASE WHEN serv.openWeekends = 1 THEN 'Yes' WHEN serv.openWeekends = 2 THEN 'No' END as 'openWeekends', prov.openingTime, prov.closingTime FROM Provider AS prov INNER JOIN ProviderType AS proTy ON proTy.Id = prov.providerTypeId INNER JOIN ProviderAddress AS proAdd ON proAdd.Id = prov.providerAddressId INNER JOIN ProviderImages AS proImg ON proImg.Id = prov.providerImageId LEFT JOIN Services AS serv ON serv.ID = serviceID WHERE (prov.Id = @ProviderId)">
                 <SelectParameters>
                 <asp:QueryStringParameter Name="ProviderId" QueryStringField="ProviderId" />
             </SelectParameters>

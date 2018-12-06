@@ -147,7 +147,7 @@
             <div class="col-sm-1"></div>
         </div>
     <br />
-     <div class="row">
+        <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-2" style="text-align:right">
                 <asp:Label ID="Label5" runat="server" Text="Childcare Vouchers Accepted: "></asp:Label>
@@ -160,6 +160,23 @@
             </div>
             <div class="col-sm-3">
                 <asp:TextBox ID="tbValidate" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    <br />
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="lblOpenTime" runat="server" Text="Opening Time: "></asp:Label>
+            </div>
+            <div class="col-sm-3">
+                <asp:TextBox ID="tbOpenTime" runat="server" class="date"></asp:TextBox>
+            </div>
+            <div class="col-sm-2" style="text-align:right">
+                <asp:Label ID="lblClosingTime" runat="server" Text="Closing Time: "></asp:Label>
+            </div>
+            <div class="col-sm-3">
+                <asp:TextBox ID="tbClosingTime" runat="server"></asp:TextBox>
             </div>
             <div class="col-sm-1"></div>
         </div>

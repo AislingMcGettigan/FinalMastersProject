@@ -328,6 +328,42 @@ namespace FinalMastersProject {
         protected global::System.Web.UI.WebControls.TextBox tbValidate;
         
         /// <summary>
+        /// lblOpenTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOpenTime;
+        
+        /// <summary>
+        /// tbOpenTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbOpenTime;
+        
+        /// <summary>
+        /// lblClosingTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblClosingTime;
+        
+        /// <summary>
+        /// tbClosingTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbClosingTime;
+        
+        /// <summary>
         /// Label7 control.
         /// </summary>
         /// <remarks>

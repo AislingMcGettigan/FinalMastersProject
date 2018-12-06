@@ -60,6 +60,6 @@
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
-           <img src="Image/PreschoolImages/Join.jpg" alt="join" style="width:500px;height:600px;">
+           <img src="Image/Reg/Join.jpg" alt="join" style="width:500px;height:600px;">
     </div>
 </asp:Content>

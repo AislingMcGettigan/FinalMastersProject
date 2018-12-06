@@ -49,7 +49,7 @@ namespace FinalMastersProject
             insertServicesCommand.Parameters.AddWithValue("@weekends", ddlWeekends.Text);
             insertServicesCommand.ExecuteNonQuery();
 
-            string providerQuery = "Insert into [dbo].[Provider] ([name],[providerTypeId],[description],[providerAddressId],[priceByDay],[providerImageId],[totalSpaces],[availibleSpaces],[staffCount],[multiChildPrice],[childCareVouchersAccepted],[ofstedValidated], [serviceId]) Values (@name,@type,@description,(SELECT TOP 1 ID FROM [dbo].[ProviderAddress] WHERE postcode = @postcode),@price,(SELECT TOP 1 ID FROM [dbo].[ProviderImages] WHERE imagePath = @path),@totalSpaces,@availibleSpaces,@staffCount,@multiChildPrice,@childCareVouchersAccepted,@ofstedValidated,(SELECT TOP 1 Id FROM [Services] ORDER BY Id DESC))";
+            string providerQuery = "Insert into [dbo].[Provider] ([name],[providerTypeId],[description],[providerAddressId],[priceByDay],[providerImageId],[totalSpaces],[availibleSpaces],[staffCount],[multiChildPrice],[childCareVouchersAccepted],[ofstedValidated],[serviceId],[openingTime],[closingTime]) Values (@name,@type,@description,(SELECT TOP 1 ID FROM [dbo].[ProviderAddress] WHERE postcode = @postcode),@price,(SELECT TOP 1 ID FROM [dbo].[ProviderImages] WHERE imagePath = @path),@totalSpaces,@availibleSpaces,@staffCount,@multiChildPrice,@childCareVouchersAccepted,@ofstedValidated,(SELECT TOP 1 Id FROM [Services] ORDER BY Id DESC),@openingTime,@closingTime)";
 
             SqlCommand insertProviderCommand = new SqlCommand(providerQuery, conn);
             insertProviderCommand.Parameters.AddWithValue("@name", tbName.Text);
@@ -64,6 +64,8 @@ namespace FinalMastersProject
             insertProviderCommand.Parameters.AddWithValue("@multiChildPrice", tbMulti.Text);
             insertProviderCommand.Parameters.AddWithValue("@childCareVouchersAccepted", tbVoucher.Text);
             insertProviderCommand.Parameters.AddWithValue("@ofstedValidated", tbValidate.Text);
+            insertProviderCommand.Parameters.AddWithValue("@openingTime", tbOpenTime.Text);
+            insertProviderCommand.Parameters.AddWithValue("@closingTime", tbClosingTime.Text);
             insertProviderCommand.ExecuteNonQuery();
 
             conn.Close();

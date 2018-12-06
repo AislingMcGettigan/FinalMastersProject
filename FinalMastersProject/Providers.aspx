@@ -192,7 +192,7 @@
                     </tr>
                     <tr runat="server">
                         <td runat="server" style="text-align: center;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
-                            <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
+                            <asp:DataPager ID="DataPager1" runat="server" PageSize="14">
                                 <Fields>
                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
                                 </Fields>

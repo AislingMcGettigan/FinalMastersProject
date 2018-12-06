@@ -165,8 +165,8 @@
     <Content Include="Image\HomePageCarousel\woman.jpg" />
     <Content Include="Image\HomePageCarousel\woman2.jpg" />
     <Content Include="Image\HomePageCarousel\writing.jpg" />
-    <Content Include="Image\Join.jpg" />
-    <Content Include="Image\login.png" />
+    <Content Include="Image\Reg\Join.jpg" />
+    <Content Include="Image\Reg\login.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\PreschoolImages\preschool7.jpg" />
     <Content Include="Image\PreschoolImages\preschool1.jpg" />
